@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: dianping
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.42.100:3306/dianping?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 192.168.42.100
+    port: 6379
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: edu.whn.dianping.entity # 别名扫描包
+logging:
+  level:
+    edu.whn.dianping: debug
+  pattern:
+    dateformat: mm:ss.SSS
